@@ -1,0 +1,2 @@
+module BottleReadingsHelper
+end

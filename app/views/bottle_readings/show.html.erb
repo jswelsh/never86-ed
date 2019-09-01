@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bottle:</strong>
+  <%= @bottle_reading.bottle_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bottle_reading.user_id %>
+</p>
+
+<p>
+  <strong>Fill:</strong>
+  <%= @bottle_reading.fill %>
+</p>
+
+<p>
+  <strong>Reading time:</strong>
+  <%= @bottle_reading.reading_time %>
+</p>
+
+<%= link_to 'Edit', edit_bottle_reading_path(@bottle_reading) %> |
+<%= link_to 'Back', bottle_readings_path %>

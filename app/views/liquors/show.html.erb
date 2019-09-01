@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Spirit:</strong>
+  <%= @liquor.spirit %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @liquor.brand %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @liquor.name %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @liquor.capacity %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @liquor.cost %>
+</p>
+
+<%= link_to 'Edit', edit_liquor_path(@liquor) %> |
+<%= link_to 'Back', liquors_path %>

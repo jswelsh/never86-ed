@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bottle Readings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bottle</th>
+      <th>User</th>
+      <th>Fill</th>
+      <th>Reading time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bottle_readings.each do |bottle_reading| %>
+      <tr>
+        <td><%= bottle_reading.bottle_id %></td>
+        <td><%= bottle_reading.user_id %></td>
+        <td><%= bottle_reading.fill %></td>
+        <td><%= bottle_reading.reading_time %></td>
+        <td><%= link_to 'Show', bottle_reading %></td>
+        <td><%= link_to 'Edit', edit_bottle_reading_path(bottle_reading) %></td>
+        <td><%= link_to 'Destroy', bottle_reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bottle Reading', new_bottle_reading_path %>

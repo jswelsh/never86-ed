@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: bars
+#
+#  id              :bigint           not null, primary key
+#  name            :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  organization_id :bigint           not null
+#
+# Indexes
+#
+#  index_bars_on_name_and_organization_id  (name,organization_id) UNIQUE
+#  index_bars_on_organization_id           (organization_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (organization_id => organizations.id)
+#
+
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  organization_id: 1
+
+two:
+  name: MyString
+  organization_id: 1

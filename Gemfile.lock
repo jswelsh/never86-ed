@@ -58,7 +58,16 @@ GEM
       zeitwerk (~> 2.1, >= 2.1.8)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    bindex (0.8.1)
+    annotate (2.7.5)
+      activerecord (>= 3.2, < 7.0)
+      rake (>= 10.4, < 13.0)
+    bcrypt (3.1.13)
+    better_errors (2.5.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -73,8 +82,10 @@ GEM
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
+    coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    debug_inspector (0.0.3)
     erubi (1.8.0)
     ffi (1.11.1)
     globalid (0.4.2)
@@ -147,6 +158,10 @@ GEM
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
+    simple_form (4.1.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+    smarter_csv (1.2.6)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -165,11 +180,6 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    web-console (4.0.1)
-      actionview (>= 6.0.0)
-      activemodel (>= 6.0.0)
-      bindex (>= 0.4.0)
-      railties (>= 6.0.0)
     webdrivers (4.1.2)
       nokogiri (~> 1.6)
       rubyzip (~> 1.0)
@@ -189,6 +199,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
+  bcrypt (~> 3.1.7)
+  better_errors
+  binding_of_caller
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -198,11 +212,12 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 6.0.0)
   selenium-webdriver
+  simple_form
+  smarter_csv (~> 1.2, >= 1.2.6)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data
-  web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)
 

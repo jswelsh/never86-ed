@@ -1,0 +1,77 @@
+
+
+
+class CreateOrganizations < ActiveRecord::Migration
+  def change
+    create_table :organizations do |t|
+      t.string :name, null: false, unique: true
+    end
+  end
+end
+
+class CreateBars < ActiveRecord::Migration
+  def change
+    create_table :bars do |t|
+      t.string :name, null: false
+      t.references :organizations, foreign_key: true, null: false
+      t.index %i[name organization_id], unique: true
+    end
+  end
+end
+
+class CreateLiquors < ActiveRecord::Migration
+  def change
+    create_table :liquors do |t|
+      t.string :spirit, null: false
+      t.string :brand, null: false
+      t.string :name
+      t.integer :capacity, null: false
+      t.numeric :cost, null: false, scale: 2, precision: 5
+      t.index %i[spirit brand name capacity], unique: true
+      t.index %i[brand name capacity], unique: true
+    end
+  end
+end
+
+class CreateBottles < ActiveRecord::Migration
+  def change
+    create_table :bottles do |t|
+      t.references :bars, foreign_key: true, null: false
+      t.references :liquors, foreign_key: true, null: false
+      t.indexes %i[bar_id liquor_id], unique: true
+    end
+  end
+end
+
+
+
+class CreateUsers < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+      t.references :organizations, foreign_key: true, null: false
+      t.string :email, null: false, unique: true
+      t.string :first_name, null: false
+      t.string :last_name, null: false
+      t.string :password_digest, null: false
+    end
+  end
+end
+
+class CreateBottleReadings < ActiveRecord::Migration
+  def change
+    create_table :bottle_readings do |t|
+      t.time :reading_time, null: false
+      t.numeric :fill, null: false, scale: 2, precision: 5
+      t.references :bottles, foreign_key: true, null: false
+      t.references :users, foreign_key: true, null: false
+      t.index %i[bottle_id reading_time], unique: true, order: { reading_time: :desc }
+    end
+  end
+end
+
+rails g scaffold organizations name:string:uniq
+rails g scaffold bars name:string organization_id:integer
+rails g scaffold liquors spirit:string brand:string name:string capacity:integer cost:numeric
+rails g model bottles bar_id:integer liquor_id:integer
+rails g scaffold users email:string first_name:string last_name:string organization_id:integer password:digest
+rails g scaffold bottle_readings bottle_id:integer user_id:integer fill:numeric reading_time:time

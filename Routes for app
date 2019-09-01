@@ -1,0 +1,30 @@
+Plan routes for app
+
+WELCOME
+#get /welcome
+
+LOGIN
+#get /login
+#post /login
+
+REGISTRATION
+#get/registration
+#post/registration
+ 
+
+BOTTLES
+GET /bottles index  INDEX
+GET /bottles/new NEW
+POST /bottles CREATE
+GET /bottles/:id SHOW
+PUT /bottles/:id UPDATE
+DELETE /bottles/:id // How would this work on index screen?
+
+ORGANIZATIONS
+GET /organizations index  INDEX
+
+
+
+
+#Do in Ruby format where you just cut out the few you don't want?
+
