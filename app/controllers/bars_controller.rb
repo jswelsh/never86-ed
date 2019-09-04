@@ -17,9 +17,10 @@ class BarsController < ApplicationController
     @bar = Bar.new
   end
 
+  #Not needed for DEMO
   # GET /bars/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /bars
   # POST /bars.json
@@ -37,19 +38,20 @@ class BarsController < ApplicationController
     end
   end
 
+  # NOT NEEDED FOR DEMO
   # PATCH/PUT /bars/1
   # PATCH/PUT /bars/1.json
-  def update
-    respond_to do |format|
-      if @bar.update(bar_params)
-        format.html { redirect_to @bar, notice: 'Bar was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bar }
-      else
-        format.html { render :edit }
-        format.json { render json: @bar.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @bar.update(bar_params)
+  #       format.html { redirect_to @bar, notice: 'Bar was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @bar }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @bar.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /bars/1
   # DELETE /bars/1.json

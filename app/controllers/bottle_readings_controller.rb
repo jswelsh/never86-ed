@@ -17,9 +17,10 @@ class BottleReadingsController < ApplicationController
     @bottle_reading = BottleReading.new
   end
 
+  #DON'T NEED FOR DEMO
   # GET /bottle_readings/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /bottle_readings
   # POST /bottle_readings.json
@@ -37,19 +38,20 @@ class BottleReadingsController < ApplicationController
     end
   end
 
+  #DON'T NEED FOR DEMO
   # PATCH/PUT /bottle_readings/1
   # PATCH/PUT /bottle_readings/1.json
-  def update
-    respond_to do |format|
-      if @bottle_reading.update(bottle_reading_params)
-        format.html { redirect_to @bottle_reading, notice: 'Bottle reading was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bottle_reading }
-      else
-        format.html { render :edit }
-        format.json { render json: @bottle_reading.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @bottle_reading.update(bottle_reading_params)
+  #       format.html { redirect_to @bottle_reading, notice: 'Bottle reading was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @bottle_reading }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @bottle_reading.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /bottle_readings/1
   # DELETE /bottle_readings/1.json

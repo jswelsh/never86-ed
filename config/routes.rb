@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :liquors, only: %i[index show]  
 
   resources :bars, except: %i[edit update] do
-    resources :bottles, except: %i[edit update] do
+    resources :bottles do
       resources :readings, except: %i[edit update]
     end 
   end
