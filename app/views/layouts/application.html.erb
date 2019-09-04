@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Never86d</title>
+    <title>
+      <% if content_for?(:page_title) %>
+        <%= yield(:page_title) %> | Never86'd
+      <% else %>
+        Never86'd"
+      <% end %>
+    </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
