@@ -1,10 +1,11 @@
 class BarsController < ApplicationController
+  before_action :require_login
   before_action :set_bar, only: [:show, :edit, :update, :destroy]
 
   # GET /bars
   # GET /bars.json
   def index
-    @bars = Bar.all
+    @bars = current_user.bars.all
   end
 
   # GET /bars/1
@@ -25,7 +26,8 @@ class BarsController < ApplicationController
   # POST /bars
   # POST /bars.json
   def create
-    @bar = Bar.new(bar_params)
+    #Will not work with multiple organizations per user
+    @bar = current_user.bars.new(bar_params)
 
     respond_to do |format|
       if @bar.save
@@ -66,11 +68,11 @@ class BarsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bar
-      @bar = Bar.find(params[:id])
+      @bar = current_user.bars.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bar_params
-      params.require(:bar).permit(:name, :organization_id)
+      params.require(:bar).permit(:name)
     end
 end

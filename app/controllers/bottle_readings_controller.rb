@@ -1,4 +1,5 @@
 class BottleReadingsController < ApplicationController
+  before_action :require_login
   before_action :set_bottle_reading, only: [:show, :edit, :update, :destroy]
 
   # GET /bottle_readings

@@ -22,7 +22,7 @@
 
 class Bottle < ApplicationRecord
   belongs_to :bar
-  belongs_to :organization, through: :bar
+  #belongs_to :organization, through: :bar
   belongs_to :liquor
 
   validates :bar, presence: true, uniqueness: { scope: :liquor }
