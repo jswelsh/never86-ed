@@ -1,11 +1,13 @@
 class BottleReadingsController < ApplicationController
   before_action :require_login
+  before_action :set_bar
+  before_action :set_bottle
   before_action :set_bottle_reading, only: [:show, :edit, :update, :destroy]
 
   # GET /bottle_readings
   # GET /bottle_readings.json
   def index
-    @bottle_readings = BottleReading.all
+    @bottle_readings = @bottle.readings.all
   end
 
   # GET /bottle_readings/1
@@ -15,7 +17,7 @@ class BottleReadingsController < ApplicationController
 
   # GET /bottle_readings/new
   def new
-    @bottle_reading = BottleReading.new
+    @bottle_reading = @bottle.readings.new
   end
 
   #DON'T NEED FOR DEMO
@@ -26,11 +28,11 @@ class BottleReadingsController < ApplicationController
   # POST /bottle_readings
   # POST /bottle_readings.json
   def create
-    @bottle_reading = BottleReading.new(bottle_reading_params)
-
+    @bottle_reading = @bottle.readings.new(bottle_reading_params)
+    @bottle_reading.user = current_user
     respond_to do |format|
       if @bottle_reading.save
-        format.html { redirect_to @bottle_reading, notice: 'Bottle reading was successfully created.' }
+        format.html { redirect_to bar_bottle_readings_path(@bar, @bottle), notice: 'Bottle reading was successfully created.' }
         format.json { render :show, status: :created, location: @bottle_reading }
       else
         format.html { render :new }
@@ -59,19 +61,29 @@ class BottleReadingsController < ApplicationController
   def destroy
     @bottle_reading.destroy
     respond_to do |format|
-      format.html { redirect_to bottle_readings_url, notice: 'Bottle reading was successfully destroyed.' }
+      format.html { redirect_to bar_bottle_readings_path(@bar, @bottle), notice: 'Bottle reading was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_bottle_reading
-      @bottle_reading = BottleReading.find(params[:id])
-    end
+
+  def set_bar
+    @bar = current_user.bars.find(params[:bar_id])
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_bottle
+    @bottle = @bar.bottles.find(params[:bottle_id])
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_bottle_reading
+    @bottle_reading = @bottle.bottle_readings.find(params[:id])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bottle_reading_params
-      params.require(:bottle_reading).permit(:bottle_id, :user_id, :fill, :reading_time)
+      params.require(:bottle_reading).permit(:photo)
     end
 end

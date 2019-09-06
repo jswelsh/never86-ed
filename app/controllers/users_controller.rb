@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    #TODO: Add time zone to user form view
     @user = User.new(user_params)
 
     respond_to do |format|

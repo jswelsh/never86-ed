@@ -4,6 +4,7 @@
   "dependencies": {
     "@babel/core": "^7.0.0-0",
     "@babel/preset-react": "^7.0.0",
+    "@fortawesome/fontawesome-free": "^5.10.2",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.7",
@@ -20,6 +21,10 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-brands-svg-icons": "^5.10.2",
+    "@fortawesome/free-regular-svg-icons": "^5.10.2",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "webpack": "^4.32.2",
     "webpack-dev-server": "^3.8.0"
   }

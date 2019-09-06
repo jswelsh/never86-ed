@@ -27,6 +27,9 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   belongs_to :organization
-  has_many :bars, through: :organizations
+  has_many :bars, through: :organization
   has_many :bottle_readings
+
+  attr_accessor :time_zone #TODO: add to database later on
+
 end
