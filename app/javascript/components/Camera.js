@@ -1,5 +1,11 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Image from 'react-bootstrap/Image'
+
 import CameraPhoto, { FACING_MODES } from 'jslib-html5-camera-photo';
+
 
 class App extends React.Component {
   constructor (props, context) {
@@ -47,29 +53,32 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <button onClick={ () => {
+      <Container fluid="true" > 
+      <Row className="justify-content-md-center">
+        <Button variant="outline-success" size="lg" type='button' onClick={ () => {
           //can switch to front via MODES.USER... n/v useful?
           let mode = FACING_MODES.ENVIRONMENT;
           //these need to be altered in light of TF requirements
           let resolution = { width: 400, height: 400 };
           this.startCamera(mode, resolution);
-        }}> Start environment facingMode resolution ideal 640 by 480 </button>
-
-        <button onClick={ () => {
+        }}>Prepare Camera</Button>
+        <Button variant="outline-success" size="lg" type='button' onClick={ () => {
           this.takePhoto();
-        }}> Take photo </button>
-        <button onClick={ () => {
+        }}> Take photo </Button>
+        <Button variant="outline-success" size="lg" type='button'  onClick={ () => {
           this.stopCamera();
-        }}> Stop </button>
-
+        }}> Stop </Button>
+        </Row>
+        <Row className="justify-content-md-center">
         <video
           ref={this.videoRef}
           autoPlay="true"
         />
-        <img
-          alt="Image"
-          src={this.state.dataUri}
-        />
+        </Row>
+        <Row className="justify-content-md-center">
+          <Image alt="Image" src={this.state.dataUri} rounded />
+        </Row>
+        </Container>
       </div>
     );
   }
