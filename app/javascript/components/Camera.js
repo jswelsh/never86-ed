@@ -10,7 +10,21 @@ class Camera extends React.Component {
       dataUri: ''
     }
   }
-  
+  validateMount () {
+    //need to generate an instance of the cameraPhoto, mounting it 
+    //so video ref can grab the the element
+    this.cameraPhoto = new CameraPhoto(this.videoRef.current);
+  }
+  //will likely need to change mode and resolution
+  startCamera (mode, res) {
+    this.cameraPhoto.startCamera(mode, res)
+      .then(() => {
+        console.log('started from camera component');
+      })
+      .catch((error) => {
+        console.error('Error from camera component', error);
+      });
+  }
 
 
   render () {
@@ -26,8 +40,8 @@ class Camera extends React.Component {
           //can switch to front via MODES.USER... n/v useful?
           let facingMode = FACING_MODES.ENVIRONMENT;
           //these need to be altered in light of TF requirements
-          let idealResolution = { width: 400, height: 400 };
-          this.startCamera(facingMode, idealResolution);
+          let resolution = { width: 400, height: 400 };
+          this.startCamera(facingMode, resolution);
         }}> Start environment facingMode resolution ideal 640 by 480 </button>
 
         <button onClick={ () => {
