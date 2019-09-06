@@ -13,7 +13,7 @@
   */  
 
 /* need to pick what to select from DOM. replace all #*/
-const cameraView = document.querySelector("view"),
+/* const cameraView = document.querySelector("view"),
         cameraOutput = document.querySelector("#output"),
         cameraSensor = document.querySelector("sensor"),
         cameraTrigger = document.querySelector("trigger")
@@ -38,7 +38,7 @@ cameraTrigger.onclick = function() {
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
     cameraOutput.src = cameraSensor.toDataURL("image/webp");
     cameraOutput.classList.add("taken");
-};
+}; */
 
 //}
 //window.addEventListener("load", cameraStart, false);
