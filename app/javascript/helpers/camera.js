@@ -12,11 +12,11 @@
   https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices
   */  
 
-//pick the style of selector, query selector works, but...
-const cameraView = document.querySelector("#camera--view"),
-        cameraOutput = document.querySelector("#camera--output"),
-        cameraSensor = document.querySelector("#camera--sensor"),
-        cameraTrigger = document.querySelector("#camera--trigger")
+/* need to pick what to select from DOM. replace all #*/
+const cameraView = document.querySelector("view"),
+        cameraOutput = document.querySelector("#output"),
+        cameraSensor = document.querySelector("sensor"),
+        cameraTrigger = document.querySelector("trigger")
    
 
 function cameraStart() {
