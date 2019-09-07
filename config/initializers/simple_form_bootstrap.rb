@@ -15,7 +15,7 @@
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
   # Default class for buttons
-  config.button_class = 'btn'
+  config.button_class = 'btn btn-success'
 
   # Define the default class of the input wrapper of the boolean input.
   config.boolean_label_class = 'form-check-label'
@@ -39,7 +39,7 @@ SimpleForm.setup do |config|
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.
   # :to_sentence to list all errors for each field.
-  config.error_method = :to_sentence
+  config.error_method = :first #:to_sentence
 
   # add validation classes to `input_field`
   config.input_field_error_class = 'is-invalid'

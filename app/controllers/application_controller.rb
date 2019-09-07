@@ -23,4 +23,7 @@ class ApplicationController < ActionController::Base
     redirect_to login_path unless logged_in?
   end
 
+  #This allows these two functions to be called inside views
+  helper_method :current_user, :logged_in?
+
 end

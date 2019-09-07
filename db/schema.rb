@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_31_224053) do
+ActiveRecord::Schema.define(version: 2019_09_05_180325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,14 +25,16 @@ ActiveRecord::Schema.define(version: 2019_08_31_224053) do
   end
 
   create_table "bottle_readings", force: :cascade do |t|
-    t.time "reading_time", null: false
-    t.decimal "fill", precision: 5, scale: 2, null: false
+    t.time "reading_time"
+    t.decimal "fill", precision: 5, scale: 2
     t.bigint "bottle_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0, null: false
     t.index ["bottle_id", "reading_time"], name: "index_bottle_readings_on_bottle_id_and_reading_time", unique: true, order: { reading_time: :desc }
     t.index ["bottle_id"], name: "index_bottle_readings_on_bottle_id"
+    t.index ["status"], name: "index_bottle_readings_on_status"
     t.index ["user_id"], name: "index_bottle_readings_on_user_id"
   end
 

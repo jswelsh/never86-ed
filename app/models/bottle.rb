@@ -24,6 +24,7 @@ class Bottle < ApplicationRecord
   belongs_to :bar
   #belongs_to :organization, through: :bar
   belongs_to :liquor
+  has_many :readings, class_name: 'BottleReading'
 
   validates :bar, presence: true, uniqueness: { scope: :liquor }
   validates :liquor, presence: true, uniqueness: { scope: :bar }
