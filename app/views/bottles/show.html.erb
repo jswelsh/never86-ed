@@ -1,3 +1,27 @@
+<style type="text/css">
+  .btn.btn-outline-info{
+    justify-content: center;
+    color: #00ffd6;
+    font-size: 1.5rem;
+    background-color: #1C3144
+  }
+  .jumbotron{
+    background-color: #1C3144
+    ;
+  }
+  .seperator {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 2px;
+  border-color:#00ffd6
+}
+
+</style>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -9,6 +33,25 @@
   <strong>Liquor:</strong>
   <%= @bottle.liquor_id %>
 </p>
+<div class="container-fluid">
+<div class="jumbotron p-3 mb-">
+  <%= render "bottles/fill" %>
+    <hr class="seperator">
+    <div class="container-buttons">
+      <div class="row">
+        <div class="col-sm">
+          <%= button_to 'Edit', edit_bar_bottle_path(@bottle), :class=>"btn btn-outline-info", :method => :get %>
+        </div>
+        <div class="col-sm">
+          <%= button_to 'Back', edit_bar_bottle_path(@bottle), :class=>"btn btn-outline-info", :method => :get %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_bottle_path(@bottle) %> |
-<%= link_to 'Back', bottles_path %>
+
+<%# <%= link_to 'Edit', edit_bar_bottle_path(@bottle), {:style => 'color: #ff0062'}  %>
+<%# <%= link_to 'Back', bar_bottles_path, {:style => 'color: #ff0062'}%>
+
+
