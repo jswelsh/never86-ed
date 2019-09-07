@@ -1,5 +1,5 @@
 class BottlesController < ApplicationController
-  before_action :require_login
+ # before_action :require_login
   before_action :set_bar
   before_action :set_bottle, only: [:show, :edit, :update, :destroy]
 
@@ -12,6 +12,7 @@ class BottlesController < ApplicationController
   # GET /bottles/1
   # GET /bottles/1.json
   def show
+    puts "HELLASLDASLD"
   end
 
   # GET /bottles/new
@@ -62,15 +63,16 @@ class BottlesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+ #current_user.
   private
     def set_bar
-      @bar = current_user.bars.find(params[:bar_id])
+      @bar = Bar.find(params[:bar_id])
     end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_bottle
-      @bottle = @bar.bottles.find(params[:id])
+      # @bottle = @bar.bottles.find(params[:id])
+      @bottle = Bottle.first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
