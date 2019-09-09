@@ -1,0 +1,111 @@
+<input type="radio" name="water" class="water--00" id="r0">
+<label for="r0">empty</label>
+<input type="radio" name="water" class="water--20" id="r1">
+<label for="r1">20%</label>
+<input type="radio" name="water" class="water--40" id="r2">
+<label for="r2">40%</label>
+<input type="radio" name="water" class="water--60" id="r3">
+<label for="r3">60%</label>
+<input type="radio" name="water" class="water--80" id="r4">
+<label for="r4">80%</label>
+<input type="radio" name="water" class="water--100" id="r5">
+<label for="r5">100%</label>
+
+<style type="text/css">
+body {
+	padding: 50px 0;
+	text-align: center;
+}
+
+input {
+	margin-bottom: 30px;
+}
+
+.cylinder {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 100px;
+	height: 300px;
+	border-radius: 50px/25px;
+	background-color: rgba(160, 160, 160, 0.3);
+}
+
+.cylinder:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100px;
+	height: 50px;
+	border-radius: 50px/25px;
+	background-color: rgb(255, 12, 188 0.2);
+	content: '';
+}
+
+.cylinder:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100px;
+	height: 50px;
+	border-radius: 50px/25px;
+	background-color: rgb(255, 12, 188, 0.4);
+	content: '';
+}
+
+.water {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100px;
+	height: 0;
+	padding-top: 50px;
+	border-radius: 50px/25px;
+	background-color: rgb(255, 12, 188, 0.6);
+	transition: 0.3s linear;
+}
+
+.water:before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100px;
+	height: 50px;
+	border-radius: 50px/25px;
+	background-color: rgb(255, 12, 188, 0.3);
+	content: '';
+}
+
+.water:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100px;
+	height: 50px;
+	border-radius: 50px/25px;
+	background-color: rgba(0, 160, 10, 0.3);
+	content: '';
+}
+
+.water--00:checked ~ .cylinder .water {
+	height: calc(250px * 0.3);
+}
+.water--20:checked ~ .cylinder .water {
+	height: calc(270px * 0.4);
+}
+.water--40:checked ~ .cylinder .water {
+	height: calc(270px * 0.5);
+}
+.water--60:checked ~ .cylinder .water {
+	height: calc(270px * 0.7);
+}
+.water--80:checked ~ .cylinder .water {
+	height: calc(270px * 0.8);
+}
+.water--100:checked ~ .cylinder .water {
+	height: calc(270px * 1);
+}
+</style>
+<div class="cylinder">
+	<div class="water"></div>
+</div>
