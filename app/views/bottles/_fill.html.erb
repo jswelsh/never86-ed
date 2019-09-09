@@ -1,35 +1,105 @@
 
 <style type="text/css">
-  .progress-bar-animated--full{
+  .card{
+    background-color: #04005E;
+    width: 18rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    border:2px;
+    border-radius: 5px; /* 5px rounded corners */
+    margin-bottom: 20px;
+  }
+  .progress-bar-animated.--full{
     background-color: #6b2d5c;
     color: white;
   }
-  .progress-bar-animated--sixtyUp{
-    background-color: #4158bd;
+  .progress-bar-animated.--sixtyUp{
+    background-color: #B76CFD;
     color: white;
+    border-radius: 5px 5px 5px 5px;
   }
-  .progress-bar-animated--fortyUp{
+  .progress-bar-animated.--fortyUp{
     background-color: #6ea4bf;
     color: white;
   }
-  .progress-bar-animated--twentyUp{
+  .progress-bar-animated.--twentyUp{
     background-color: #bc45cc;
     color: white;
   }
-  .progress-bar-animated--emptyUp{
+  .progress-bar-animated.--emptyUp{
     background-color: #ff82b2;
     color: white; 
   }
-  .date{
-    color: #00ffd6;
-    font-size: 1.5rem;
+  .header{
+    font-size: 20px;
+    padding: 7px;
+    font-family: 'Futura';
+    color: #e5e5e5;
+    text-shadow: 0 0 1px #e5e5e5, 0 0 2px #e5e5e5, 0 0 5px #09FBD3, 0 0 10px #09FBD3, 0 0 15px #09FBD3, 0 0 20px #09FBD3, 0 0 30px #09FBD3;
+    text-align: center;
   }
+section {
+
+}
+.one {
+  background: #001437;
+  position: relative;
+  margin-top: 1px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 5px; /* 5px rounded corners */
+  padding-bottom: 60px;
+}
+.one::after,
+.one::before {
+  position: absolute; 
+  content: '';
+  width: 100px;
+  height: 50px;
+  background: #001437;
+  bottom: -1em;
+  z-index: 100;
+}
+.one::before {
+  right: 50%;
+  transform: skew(0, 20deg)
+}
+.one::after {
+  left: 50%;
+  transform: skew(0, -20deg)
+}
+.two {
+  background: #652EC7;
+  border:2px;
+  border-radius: 5px; /* 5px rounded corners */
+  height: 400px;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  margin-left: 2px;
+
+}
 </style>
-
-<strong class="date">Sept 3</strong>
-  <div class="progress" style="height: 20px;" >
-    <div class="<%= fillColor %>" role="progressbar" style="width: <%= fillPercentage %>%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+<div class="card">
+  <section class="one">
+    <div class="container">
+      <div class="row" style="padding: 9px;">
+        <div class="col">
+          <strong class="header">AA Ron</strong>
+        </div>
+        <div class="col">
+          <strong class="header">Sept 3</strong>
+        </div>
+      </div>
+      <div class="row">
+        </section>
+        <section class="two">
+          <%= render "bottles/bottleMain" %>
+        </section>
+      </div>
+    </div>
   </div>
+</div>
+
   
-
-
+<%# <%= render "bottles/bottleMain" %>
+<%#   <div class="progress" style="height: 20px; margin: 10px;" ><div class="<%= fillColor" role="progressbar" style="width: <%= fillPercentage " aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div> %>

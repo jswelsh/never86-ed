@@ -1,4 +1,4 @@
-<input type="radio" name="water" class="water--00" id="r0">
+<%# <input type="radio" name="water" class="water--00" id="r0">
 <label for="r0">empty</label>
 <input type="radio" name="water" class="water--20" id="r1">
 <label for="r1">20%</label>
@@ -6,10 +6,12 @@
 <label for="r2">40%</label>
 <input type="radio" name="water" class="water--60" id="r3">
 <label for="r3">60%</label>
-<input type="radio" name="water" class="water--80" id="r4">
-<label for="r4">80%</label>
+
 <input type="radio" name="water" class="water--100" id="r5">
 <label for="r5">100%</label>
+ %>
+
+
 
 <style type="text/css">
 body {
@@ -24,9 +26,11 @@ input {
 .cylinder {
 	position: relative;
 	overflow: hidden;
-	margin: 0 auto;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 	width: 100px;
-	height: 300px;
+    height: 250px;
 	border-radius: 50px/25px;
 	background-color: rgba(160, 160, 160, 0.3);
 }
@@ -49,7 +53,9 @@ input {
 	width: 100px;
 	height: 50px;
 	border-radius: 50px/25px;
-	background-color: rgb(255, 12, 188, 0.4);
+    background-color: rgb(255, 12, 188, 0.4);
+      -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
 	content: '';
 }
 
@@ -91,21 +97,23 @@ input {
 	height: calc(250px * 0.3);
 }
 .water--20:checked ~ .cylinder .water {
-	height: calc(270px * 0.4);
+	height: calc(250px * 0.45);
 }
 .water--40:checked ~ .cylinder .water {
-	height: calc(270px * 0.5);
+	height: calc(250px * 0.6);
 }
 .water--60:checked ~ .cylinder .water {
-	height: calc(270px * 0.7);
+	height: calc(250px * 0.65);
 }
 .water--80:checked ~ .cylinder .water {
-	height: calc(270px * 0.8);
+	height: calc(250px * 0.8);
 }
 .water--100:checked ~ .cylinder .water {
-	height: calc(270px * 1);
+	height: calc(250px * .9);
 }
+
 </style>
+
 <div class="cylinder">
 	<div class="water"></div>
 </div>
