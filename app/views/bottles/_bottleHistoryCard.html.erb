@@ -1,13 +1,9 @@
 <style type="text/css">
-  .date{
-    color: #00ffd6;
-    font-size: 1.2rem;
-    margin:30px;
-  }
+
   .side-lines::before,
   .side-lines::after { 
     position:absolute; 
-    width:10%; 
+    width:20%; 
     height:8px; 
     content:''; 
     border-top:2px 
@@ -16,7 +12,7 @@
     solid #ff2281; 
     margin-top:.50em; 
     }
-  .side-lines::before { margin-left:-11%; }
+  .side-lines::before { margin-left:-21%; }
   .side-lines::after { margin-left:1%; }
 }
     .progress-bar-animated.--full{
@@ -45,6 +41,14 @@
     height: 20px; 
     margin:15px 25px 15px 25px
   }
+  .date{
+    color: #09FBD3;
+    font-size: 1.2em;
+
+  }
+  .fill{
+    font-size: 2em;
+  }
   .text-float{
     position: relative;
     display: inline-block; /* Make the width of box same as image */
@@ -55,9 +59,9 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-    top: 25%; /* Adjust this value to move the positioned div up and down */
+    top: 15%; /* Adjust this value to move the positioned div up and down */
     text-align: center;
-    width: 60%; /* Set the width of the positioned div */
+    width: 90%; /* Set the width of the positioned div */
   }
   @keyframes expandWidth {
     from { width: 0; }
@@ -69,29 +73,38 @@
 <div class="card" style="width: 40rem;">
   <div class="text-float">
     <div class="float"> 
-    <strong class="header side-lines">Bottle Fill History</strong>
-    <p class="header side-lines">V</p>
+      <strong class="header fill side-lines">Bottle Fill History</strong>
+      <p class="header fill side-lines">V</p>
     </div>
     <section class="one">
-      <div class="container">
-        </div>
     </section>
   </div>
     <section class="two" style="padding-top: 70px;">
-      <strong class="date">Sept 3</strong>
-      <strong class="date">AA Ron</strong>
-        <div class="progress">
-          <div class="<%= fillColor %>" role="progressbar" style="width: <%= fillPercentage %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-        </div>
-      <strong class="date">Sept 4</strong>
+      <div class="split">
+        <strong class="date">Sept 3</strong>
+        <strong class="date">AA Ron</strong>
+      </div>
+      <div class="progress">
+        <div class="<%= fillColor %>" role="progressbar" style="width: <%= fillPercentage %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="split">
+        <strong class="date">Sept 4</strong>
+        <strong class="date">AA Ron</strong>
+      </div>
         <div class="progress">
           <div class="<%= fillColor %>" role="progressbar" style="width: <%= 80 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-      <strong class="date">Sept 5</strong>  
+      <div class="split">  
+        <strong class="date">Sept 5</strong>
+        <strong class="date">AA Ron</strong>  
+     </div>   
         <div class="progress" >
           <div class="<%= fillColor %>" role="progressbar" style="width: <%= 40 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-      <strong class="date">Sept 6</strong>  
+      <div class="split">  
+        <strong class="date">Sept 6</strong>  
+        <strong class="date">AA Ron</strong>
+      </div>  
         <div class="progress" >
           <div class="<%= fillColor %>" role="progressbar" style="width: <%= 30 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
         </div>    

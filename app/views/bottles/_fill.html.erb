@@ -3,7 +3,6 @@
   .header{
     color: #09FBD3;
     font-family: sans-serif;
-    font-size: 1.55533em;
     text-align:center; 
   }
   .container{
@@ -56,22 +55,31 @@
   margin-right: 2px;
   margin-left: 2px
 }
-
+.current-fill-header{
+  font-size: 2em;
+}
+.split{
+  display:flex; 
+  justify-content: space-evenly;
+}
 </style>
+
+
+
+
 <div class="card">
-  <section class="one">
-    <div class="container">
-      <div class="row">
-        <div class="col" >
-          <strong class="header" style="align: left">AA Ron</strong>
-        </div>
-        <div class="col">
-          <strong class="header" style="align: right">Sept 3</strong>
-        </div>
-        
+  <div class="text-float">
+    <div class="float"> 
+      <div class="split">
+        <h4 class="header current-fill-header">Sept 7</h4>
+        <h4 class="header current-fill-header">AA Ron</h4>
       </div>
-      <div class="row">
-        </section>
+      <h1 class="header fill side-lines">V</h4>
+    </div>
+    <section class="one">
+    </section>
+    </section>
+  </div>
         <section class="two">
           <%= render "bottles/bottleMain" %>
         </section>
