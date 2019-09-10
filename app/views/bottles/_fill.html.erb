@@ -1,42 +1,12 @@
 
 <style type="text/css">
-  .card{
-    background-color: #04005E;
-    width: 18rem;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-    transition: 0.3s;
-    border:2px;
-    border-radius: 5px; /* 5px rounded corners */
-    margin-bottom: 20px;
-  }
-  .progress-bar-animated.--full{
-    background-color: #6b2d5c;
-    color: white;
-  }
-  .progress-bar-animated.--sixtyUp{
-    background-color: #B76CFD;
-    color: white;
-    border-radius: 5px 5px 5px 5px;
-  }
-  .progress-bar-animated.--fortyUp{
-    background-color: #6ea4bf;
-    color: white;
-  }
-  .progress-bar-animated.--twentyUp{
-    background-color: #bc45cc;
-    color: white;
-  }
-  .progress-bar-animated.--emptyUp{
-    background-color: #ff82b2;
-    color: white; 
-  }
   .header{
-    font-size: 20px;
-    padding: 7px;
-    font-family: 'Futura';
-    color: #e5e5e5;
-    text-shadow: 0 0 1px #e5e5e5, 0 0 2px #e5e5e5, 0 0 5px #09FBD3, 0 0 8px #09FBD3, 0 0 8px #09FBD3, 0 0 10px #09FBD3, 0 0 15px #09FBD3;
-    text-align: center;
+    color: #09FBD3;
+    font: 'Avenir Next',sans-serif!important;
+    font-size: 1.55533em;
+  }
+  .container{
+    padding-top: 15px;
   }
 section {
 }
@@ -75,19 +45,23 @@ section {
   margin-bottom: 2px;
   margin-right: 2px;
   margin-left: 2px;
+
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 </style>
 <div class="card">
   <section class="one">
     <div class="container">
-      <div class="row" style="padding: 9px;">
+      <div class="row">
         <div class="col" >
           <strong class="header" style="align: left">AA Ron</strong>
         </div>
         <div class="col">
           <strong class="header" style="align: right">Sept 3</strong>
         </div>
+        
       </div>
       <div class="row">
         </section>
@@ -98,7 +72,13 @@ section {
     </div>
   </div>
 </div>
-
   
 <%# <%= render "bottles/bottleMain" %>
 <%#   <div class="progress" style="height: 20px; margin: 10px;" ><div class="<%= fillColor" role="progressbar" style="width: <%= fillPercentage " aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div> %>
+<%#     font-size: 20px;
+    padding: 7px;
+    font-family: 'Futura';
+    color: #e5e5e5;
+    text-shadow: 0 0 1px #e5e5e5, 0 0 2px #e5e5e5, 0 0 5px #09FBD3, 0 0 8px #09FBD3, 0 0 8px #09FBD3, 0 0 10px #09FBD3, 0 0 15px #09FBD3;
+    text-align: center;
+     %>
