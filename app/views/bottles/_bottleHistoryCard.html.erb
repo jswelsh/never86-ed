@@ -1,0 +1,64 @@
+<style type="text/css">
+  .date{
+    color: #00ffd6;
+    font-size: 1.2rem;
+    margin:30px;
+  }
+    .progress-bar-animated.--full{
+    background-color: #6b2d5c;
+    color: white;
+  }
+  .progress-bar-animated.--sixtyUp{
+    background-color: #B76CFD;
+    color: white;
+    animation: expandWidth 3s;
+  }
+  .progress-bar-animated.--fortyUp{
+    background-color: #6ea4bf;
+    color: white;
+  }
+  .progress-bar-animated.--twentyUp{
+    background-color: #bc45cc;
+    color: white;
+  }
+  .progress-bar-animated.--emptyUp{
+    background-color: #ff82b2;
+    color: white; 
+
+  }
+  .progress{
+    height: 20px; 
+    margin:15px 25px 15px 25px
+  }
+  @keyframes expandWidth {
+    from { width: 0; }
+    to { width: fillPercentage }
+   }
+
+  </style>
+
+<div class="card" style="width: 40rem;">
+  <section class="one">
+    <div class="container">
+        <strong class="header" style="align: right" >Bottle FIll History</strong>
+      </div>
+  </section>
+    <section class="two" style="padding-top: 70px;">
+      <strong class="date">Sept 3</strong>
+        <div class="progress">
+          <div class="<%= fillColor %>" role="progressbar" style="width: <%= fillPercentage %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      <strong class="date">Sept 4</strong>
+        <div class="progress">
+          <div class="<%= fillColor %>" role="progressbar" style="width: <%= 80 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      <strong class="date">Sept 5</strong>  
+        <div class="progress" >
+          <div class="<%= fillColor %>" role="progressbar" style="width: <%= 40 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      <strong class="date">Sept 6</strong>  
+        <div class="progress" >
+          <div class="<%= fillColor %>" role="progressbar" style="width: <%= 30 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>    
+    </section>
+</div>
