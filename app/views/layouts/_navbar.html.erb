@@ -1,14 +1,33 @@
+
+<style type="text/css">
+.nav{
+  background-color: #123c69
+}
+.nav--text{
+  color: #09FBD3;
+  font: 'Avenir Next',sans-serif!important;
+  font-size: 2.553em;
+}
+.btn.nav--button{
+  background-color: #09FBD3;
+  border-color: #ff2281;
+  border:2px;
+  color: black;
+  font-size:  1.5em;
+}
+
+</style>
 <header>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 shadow p-3 mb-5 mb-5 nav">
+    <h5 class="my-0 mr-md-auto font-weight-bold text-uppercase nav--text">tipsy toddler</h5>
     <nav class="my-2 my-md-0 mr-md-3">
       <%= link_to 'Link', '#', class: ['p-2', 'text-dark'] %>
     </nav>
     <% if logged_in? %>
-      <%= link_to 'Logout', logout_path, method: :delete, class: ['btn', 'btn-outline-primary'] %>
+      <%= link_to 'Logout', logout_path, method: :delete, class: ['btn', 'btn-outline-primary', 'nav--button'] %>
     <% else %>
-    <%= link_to 'Sign Up', new_user_path, class: ['btn', 'btn-outline-primary'] %>&nbsp;
-    <%= link_to 'Login', login_path, class: ['btn', 'btn-outline-primary'] %>
+    <%= link_to 'Sign Up', new_user_path, class: ['btn', 'btn-outline-primary', 'nav--button'] %>&nbsp;
+    <%= link_to 'Login', login_path, class: ['btn', 'btn-outline-primary', 'nav--button'] %>
     <% end %>
 
   </div>
