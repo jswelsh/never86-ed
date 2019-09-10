@@ -8,13 +8,24 @@
   font: 'Avenir Next',sans-serif!important;
   font-size: 2.553em;
 }
+.button-container{
+  display:flex; 
+  justify-content: space-evenly;
+  width: 250px;
+}
 .btn.nav--button{
   background-color: #09FBD3;
-  border-color: #ff2281;
-  border:2px;
-  color: black;
+  border: solid 2px transparent;
+  border-radius: 4px;
+  color: #123c69;
   font-size:  1.5em;
+  outline: none;
 }
+.btn.nav--button:hover {
+  color: #09FBD3; 
+  background-color: rgba(255, 0, 0, 0.0); 
+  border:2px solid #09FBD3;
+  }
 
 </style>
 <header>
@@ -23,12 +34,13 @@
     <nav class="my-2 my-md-0 mr-md-3">
       <%= link_to 'Link', '#', class: ['p-2', 'text-dark'] %>
     </nav>
+    <div class="button-container">
     <% if logged_in? %>
-      <%= link_to 'Logout', logout_path, method: :delete, class: ['btn', 'btn-outline-primary', 'nav--button'] %>
+      <%= link_to 'Logout', logout_path, method: :delete, class: ['btn', 'nav--button'] %>
     <% else %>
-    <%= link_to 'Sign Up', new_user_path, class: ['btn', 'btn-outline-primary', 'nav--button'] %>&nbsp;
-    <%= link_to 'Login', login_path, class: ['btn', 'btn-outline-primary', 'nav--button'] %>
+    <%= link_to 'Sign Up', new_user_path, class: ['btn', 'nav--button'] %>&nbsp;
+    <%= link_to 'Login', login_path, class: ['btn', 'nav--button'] %>
     <% end %>
-
+    </div>
   </div>
 </header>
