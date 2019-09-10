@@ -3,18 +3,18 @@ module ApplicationHelper
   def fillColor
     case 60
     when 80..100
-      "progress-bar progress-bar-striped progress-bar-animated --full"
+      "full progress-bar progress-bar-striped"
     when 60..79
-      "progress-bar progress-bar-striped progress-bar-animated --sixtyUp"
+      "sixtyUp progress-bar progress-bar-striped"
     when 40..59
-      "progress-bar progress-bar-striped progress-bar-animated --fortyUp"
+      "fortyUp progress-bar progress-bar-striped"
     when 20..39
-      "progress-bar progress-bar-striped progress-bar-animated --twentyUp"
+      "twentyUp progress-bar progress-bar-striped"
     when 0..19
-      "progress-bar progress-bar-striped progress-bar-animated --emptyUp"
+      "emptyUp progress-bar progress-bar-striped"
     end
   end 
-  "progress-bar progress-bar-striped progress-bar-animated"
+
     def fillPercentage
       65
     end
