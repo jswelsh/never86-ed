@@ -1,34 +1,75 @@
 
 <style type="text/css">
 .nav{
-  background-color: #123c69
+  background-color: #123c69;
+  position: relative;
+  height: 100px;
+}
+.nav::after,
+.nav::before {
+  position: absolute; 
+  content: '';
+  width: 600px;
+  height: 100px;
+  background: #001437;
+  z-index: 2;
+}
+.nav::before {
+  left:-60px;
+  transform: skewY(25deg);
+  transform: skewX(25deg);
+}
+.nav::after{
+  left:30px;
+  transform: skewY(25deg);
+  transform: skewX(-25deg);
+  background: #ff2281;
+  z-index: 1; 
 }
 .nav--text{
+  margin-left: 30px;
   color: #09FBD3;
-  font: 'Avenir Next',sans-serif!important;
+  font-family: sans-serif;
   font-size: 2.553em;
+  z-index:3;
+}
+.button-container{
+  display:flex; 
+  justify-content: space-evenly;
+  width: 250px;
 }
 .btn.nav--button{
   background-color: #09FBD3;
-  border-color: #ff2281;
-  border:2px;
-  color: black;
+  border: solid 2px transparent;
+  border-radius: 4px;
+  color: #123c69;
   font-size:  1.5em;
+  outline: none;
+}
+.btn.nav--button:hover {
+  color: #09FBD3; 
+  background-color: rgba(255, 0, 0, 0.0); 
+  border:2px solid #09FBD3;
+  }
+  .btn.nav--button:active {
+  transform: translateY(1px);
+  filter: saturate(150%);
 }
 
 </style>
 <header>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 shadow p-3 mb-5 mb-5 nav">
+  <div class="d-flex flex-column flex-md-row align-items-center mb-3 shadow mb-5 mb-5 nav">
     <h5 class="my-0 mr-md-auto font-weight-bold text-uppercase nav--text">tipsy toddler</h5>
     <nav class="my-2 my-md-0 mr-md-3">
       <%= link_to 'Link', '#', class: ['p-2', 'text-dark'] %>
     </nav>
+    <div class="button-container">
     <% if logged_in? %>
-      <%= link_to 'Logout', logout_path, method: :delete, class: ['btn', 'btn-outline-primary', 'nav--button'] %>
+      <%= link_to 'Logout', logout_path, method: :delete, class: ['btn', 'nav--button'] %>
     <% else %>
-    <%= link_to 'Sign Up', new_user_path, class: ['btn', 'btn-outline-primary', 'nav--button'] %>&nbsp;
-    <%= link_to 'Login', login_path, class: ['btn', 'btn-outline-primary', 'nav--button'] %>
+    <%= link_to 'Sign Up', new_user_path, class: ['btn', 'nav--button'] %>&nbsp;
+    <%= link_to 'Login', login_path, class: ['btn', 'nav--button'] %>
     <% end %>
-
+    </div>
   </div>
 </header>

@@ -2,17 +2,26 @@
 <style type="text/css">
   .header{
     color: #09FBD3;
-    font: 'Avenir Next',sans-serif!important;
-    font-size: 1.55533em;
+    font-family: sans-serif;
+    text-align:center; 
   }
   .container{
     padding-top: 15px;
+    text-align:center; 
   }
-section {
-}
+  .card{
+    background-color: #04005E;
+    width: 18rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    border:2px;
+    border-radius: 5px; /* 5px rounded corners */
+    margin-bottom: 20px;
+  }
 .one {
   background: #001437;
   position: relative;
+  height:120px;
   margin-top: 1px;
   margin-right: 2px;
   margin-left: 2px;
@@ -44,27 +53,33 @@ section {
   height: 400px;
   margin-bottom: 2px;
   margin-right: 2px;
-  margin-left: 2px;
-
-    padding-left: 10px;
-    padding-right: 10px;
+  margin-left: 2px
 }
-
+.current-fill-header{
+  font-size: 2em;
+}
+.split{
+  display:flex; 
+  justify-content: space-evenly;
+}
 </style>
+
+
+
+
 <div class="card">
-  <section class="one">
-    <div class="container">
-      <div class="row">
-        <div class="col" >
-          <strong class="header" style="align: left">AA Ron</strong>
-        </div>
-        <div class="col">
-          <strong class="header" style="align: right">Sept 3</strong>
-        </div>
-        
+  <div class="text-float">
+    <div class="float"> 
+      <div class="split">
+        <h4 class="header current-fill-header">Sept 7</h4>
+        <h4 class="header current-fill-header">AA Ron</h4>
       </div>
-      <div class="row">
-        </section>
+      <h1 class="header fill side-lines">V</h4>
+    </div>
+    <section class="one">
+    </section>
+    </section>
+  </div>
         <section class="two">
           <%= render "bottles/bottleMain" %>
         </section>
