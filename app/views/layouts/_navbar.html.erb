@@ -18,16 +18,16 @@
   left:-60px;
   transform: skewY(25deg);
   transform: skewX(25deg);
+  z-index: 2;
 }
 .nav::after{
-  left:30px;
-  transform: skewY(25deg);
-  transform: skewX(-25deg);
-  background: #ff2281;
-  z-index: 1; 
+  animation-name: lipstick;
+  animation-duration: 4s;
+  animation-fill-mode: both;
+  animation-delay: 3s;
 }
 .nav--text{
-  margin-left: 30px;
+  margin-left: 50px;
   color: #09FBD3;
   font-family: sans-serif;
   font-size: 2.553em;
@@ -37,6 +37,7 @@
   display:flex; 
   justify-content: space-evenly;
   width: 250px;
+  margin-right: 50px;
 }
 .--button{
   background-color: #09FBD3;
@@ -55,11 +56,27 @@
   transform: translateY(1px);
   filter: saturate(150%);
 }
+@keyframes lipstick {
+  from {
+  left:-120px;
+  transform: skewY(25deg);
+  transform: skewX(-25deg);
+  background: #ff2281;
+  z-index: 1; 
+  }
+  to {
+  left:30px;
+  transform: skewY(25deg);
+  transform: skewX(-25deg);
+  background: #ff2281;
+  z-index: 1; 
+  }
+}
 
 </style>
 <header>
   <div class="d-flex flex-column flex-md-row align-items-center mb-3 shadow mb-5 mb-5 nav">
-    <h5 class="my-0 mr-md-auto font-weight-bold text-uppercase nav--text">tipsy toddler</h5>
+    <h5 class="my-0 mr-md-auto font-weight-bold text-uppercase nav--text">never 86'd</h5>
     <nav class="my-2 my-md-0 mr-md-3">
       <%= link_to 'Link', '#', class: ['p-2', 'text-dark'] %>
     </nav>
