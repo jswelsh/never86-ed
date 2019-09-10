@@ -1,14 +1,101 @@
-
-<%= simple_form_for(@bottle) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :bar_id %>
-    <%= f.input :liquor_id %>
-  </div>
+<%# 
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit
   </div>
 <% end %>
+<style type="text/css">
+.camera-button-container{
+/*   display:flex; 
+  justify-content: space-evenly;
+  width: 300px; */
+}
+.camera-container{
+/*     margin: auto;
+  width: 50%; */
+}
+.--button{
+  background-color: #09FBD3;
+  border: solid 2px transparent;
+  border-radius: 4px;
+  color: #123c69;
+  font-size:  1.5em;
+  outline: none;
+}
+.--button:hover {
+  color: #09FBD3; 
+  background-color: rgba(255, 0, 0, 0.0); 
+  border:2px solid #09FBD3;
+  }
+  .--button:active {
+  transform: translateY(1px);
+  filter: saturate(150%);
+}
+.container{
+    padding-top: 15px;
+    text-align:center; 
+  }
+  .card{
+    background-color: #04005E;
+    width: 18rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    border:2px;
+    border-radius: 5px; /* 5px rounded corners */
+    margin-bottom: 20px;
+  }
+.one {
+  background: #001437;
+  position: relative;
+  height:120px;
+  margin-top: 1px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border-radius: 5px; /* 5px rounded corners */
+  padding-bottom: 60px;
+}
+.one::after,
+.one::before {
+  position: absolute; 
+  content: '';
+  width: 100px;
+  height: 50px;
+  background: #001437;
+  bottom: -1em;
+  z-index: 100;
+}
+.one::before {
+  right: 50%;
+  transform: skew(0, 20deg)
+}
+.one::after {
+  left: 50%;
+  transform: skew(0, -20deg)
+}
+.two {
+  background: #652EC7;
+  border:2px;
+  border-radius: 5px; /* 5px rounded corners */
+  height: 400px;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  margin-left: 2px
+}
+.text-float{
+    position: relative;
+    display: inline-block; /* Make the width of box same as image */
+  }
+  .text-float .float{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 15%; /* Adjust this value to move the positioned div up and down */
+    text-align: center;
+    width: 90%; /* Set the width of the positioned div */
+  }
+</style>
+<div class="container--camera">
+  <%= react_component ('Camera') %>
+</div> 
