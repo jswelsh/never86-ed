@@ -38,7 +38,7 @@
   justify-content: space-evenly;
   width: 250px;
 }
-.btn.nav--button{
+.--button{
   background-color: #09FBD3;
   border: solid 2px transparent;
   border-radius: 4px;
@@ -46,12 +46,12 @@
   font-size:  1.5em;
   outline: none;
 }
-.btn.nav--button:hover {
+.--button:hover {
   color: #09FBD3; 
   background-color: rgba(255, 0, 0, 0.0); 
   border:2px solid #09FBD3;
   }
-  .btn.nav--button:active {
+  .--button:active {
   transform: translateY(1px);
   filter: saturate(150%);
 }
@@ -65,10 +65,10 @@
     </nav>
     <div class="button-container">
     <% if logged_in? %>
-      <%= link_to 'Logout', logout_path, method: :delete, class: ['btn', 'nav--button'] %>
+      <%= link_to 'Logout', logout_path, method: :delete, class: ['btn', '--button'] %>
     <% else %>
-    <%= link_to 'Sign Up', new_user_path, class: ['btn', 'nav--button'] %>&nbsp;
-    <%= link_to 'Login', login_path, class: ['btn', 'nav--button'] %>
+    <%= link_to 'Sign Up', new_user_path, class: ['btn', '--button'] %>&nbsp;
+    <%= link_to 'Login', login_path, class: ['btn', '--button'] %>
     <% end %>
     </div>
   </div>
