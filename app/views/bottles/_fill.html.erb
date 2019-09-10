@@ -56,11 +56,19 @@
   margin-left: 2px
 }
 .current-fill-header{
+  font-weight: bolder;
   font-size: 2em;
 }
 .split{
   display:flex; 
   justify-content: space-evenly;
+}
+.splitter{
+  position: relative;
+  bottom:8px;
+  font-weight: bolder;
+  font-size: 3em;
+  color: #ff2281;
 }
 </style>
 
@@ -72,6 +80,7 @@
     <div class="float"> 
       <div class="split">
         <h4 class="header current-fill-header">Sept 7</h4>
+        <h1 class="splitter">/</h1>
         <h4 class="header current-fill-header">AA Ron</h4>
       </div>
       <h1 class="header fill side-lines">V</h4>
