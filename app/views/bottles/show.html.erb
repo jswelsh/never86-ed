@@ -10,31 +10,19 @@
   }
 </style>
     <p id="notice"><%= notice %></p>
-    <p>
+<%#     <p>
       <strong>Bar:</strong>
-      <%= @bottle.bar_id %>
+      <%= @bottle.bar_id 
     </p>
 
     <p>
       <strong>Liquor:</strong>
-      <%= @bottle.liquor_id %>
-    </p>
-    <div class="container">
-  <div class="row">
-    <div class="col">
-      <div class="container-fluid">
-          <%= render "bottles/fill" %>
-      </div>
-    </div>
-    <div class="col">
-      <div class="container-fluid">
-          <%= render "bottles/fill" %>
-      </div>
-    </div>
-    <div class="col">
-      <div class="container-fluid">
-          <%= render "bottles/fill" %>
-      </div>
+      <%= @bottle.liquor_id 
+    </p> %>
+  <div class="container">
+    <div class="row">
+        <%= render "bottles/bottleHistoryCard" %>
+        <%= render "bottles/fill" %>
     </div>
   </div>
 
@@ -43,3 +31,8 @@
     <%# <%= link_to 'Back', bar_bottles_path, {:style => 'color: #ff0062'}%>
 
 
+<%#     <div class="col">
+      <div class="container-fluid">
+          <%= render "bottles/fill"
+      </div>
+    </div> %>
