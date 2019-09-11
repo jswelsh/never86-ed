@@ -30,6 +30,7 @@ class ProcessReadingJob < ApplicationJob
       Rails.logger.warn("Failed to process reading for #{bottle_reading.inspect}. Error from script: \n#{error_str}")
       bottle_reading.failed!
       bottle_reading.save!
+      return
     end
 
     result = JSON.parse(output_str)

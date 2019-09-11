@@ -1,18 +1,127 @@
+<style type="text/css">
+  .form-control{
+    font-size: 1rem;
+    width: 700px;
+    background-color: #75d5fd;
+    border: 1px solid #09FBD3;
+  }
+  .form-control:focus{
+    background-color: #7abbd6;
+  }
+  .form-control-label{
+    color: #09FBD3;
+    font-size: 1.2em;
+  }
+  .side-lines::before,
+  .side-lines::after {
+    font-size: 2em;
+    position:absolute; 
+    width:20%; 
+    height:8px; 
+    content:''; 
+    border-top:2px 
+    solid #ff2281; 
+    border-bottom: 2px 
+    solid #ff2281; 
+    margin-top:.30em; 
+    }
+  .side-lines::before { margin-left:-21%; }
+  .side-lines::after { margin-left:1%; }
+    .header{
+    color: #09FBD3;
+    font-family: sans-serif;
+    text-align:center; 
+    font-size: 2em;
+  }
+  .card{
+    background-color: #04005E;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    border:2px;
+    border-radius: 5px; /* 5px rounded corners */
+    margin-bottom: 20px;
+  }
+  .one {
+    background: #001437;
+    position: relative;
+    height:120px;
+    margin-top: 1px;
+    margin-right: 2px;
+    margin-left: 2px;
+    border-radius: 5px; /* 5px rounded corners */
+    padding-bottom: 60px;
+  }
+  .one::after,
+  .one::before {
+    position: absolute; 
+    content: '';
+    width: 100px;
+    height: 50px;
+    background: #001437;
+    bottom: -1em;
+    z-index: 100;
+  }
+  .one::before {
+    right: 50%;
+    transform: skew(0, 20deg)
+  }
+  .one::after {
+    left: 50%;
+    transform: skew(0, -20deg)
+  }
+  .two {
+    background: #123c69;
+    border:2px;
+    border-radius: 5px; /* 5px rounded corners */
+    height: 700px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    margin-left: 2px;
+    display:flex; 
+    justify-content: center;
+  }
+  .text-float{
+    position: relative;
+    display: inline-block; /* Make the width of box same as image */
+  }
+  .text-float .float{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 15%; /* Adjust this value to move the positioned div up and down */
+    text-align: center;
+    width: 90%; /* Set the width of the positioned div */
+  }
+</style>
 
+<div class="card">
+  <div class="text-float">
+    <div class="float"> 
+      <strong class="header side-lines">Signup</strong>
+      <p class="header side-lines">V</p>
+    </div>
+    <section class="one">
+    </section>
+  </div>
+  <section class="two" style="padding-top: 40px;">
 <%= simple_form_for(@user, url: user_path) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :email %>
-    <%= f.input :password %>
-    <%= f.association :organization, prompt: "Choose Your Organization" %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :time_zone %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :email, prompt: "Email", class:['form-control'] %>
+      <%= f.input :password, prompt: "Password", class:['form-control'] %>
+      <%= f.association :organization, prompt: "Choose Your Organization" %>
+      <%= f.input :first_name, prompt: "First Name" %>
+      <%= f.input :last_name, prompt: "Last Name" %>
+      <%= f.input :time_zone, prompt: "Choose Your Time Zone" %>
+    </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: ['btn', '--button']  %>
+      </div>
+    <% end %>
+  </section>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>

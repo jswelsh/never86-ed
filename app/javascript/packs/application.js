@@ -10,8 +10,7 @@ require("@rails/activestorage").start()
 import 'jquery'
 import 'popper.js'
 import 'bootstrap'
-import 'bootstrap/scss/bootstrap.scss'
-
+import '../stylesheets/application.scss'
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
