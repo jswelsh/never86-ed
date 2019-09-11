@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :bars, except: %i[edit update] do
     resources :bottles do
-      resources :readings, except: %i[edit update]
+      resources :readings, except: %i[edit update], controller: :bottle_readings
     end 
   end
 end

@@ -32,4 +32,7 @@ class User < ApplicationRecord
 
   attr_accessor :time_zone #TODO: add to database later on
 
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

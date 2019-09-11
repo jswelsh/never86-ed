@@ -50,20 +50,14 @@
  <div style="display:flex; justify-content: space-evenly;">
   <div id="trapezoid"></div>
 </div>  
-  <%= link_to link_to 'Take Picture', new_bar_bottle_reading_path(@bottle.liquor_id), class: ['--button', 'camera']  %>  
+  <%= link_to link_to 'Take Picture', new_bar_bottle_reading_path(@bar, @bottle.liquor_id), class: ['--button', 'camera']  %>  
     <p id="notice"><%= notice %></p>
-<%#     <p>
-      <strong>Bar:</strong>
-      <%= @bottle.bar_id 
-    </p>
-
-    <p>
-      <strong>Liquor:</strong>
-      <%= @bottle.liquor_id 
-    </p> %>
+    <h3>
+      <strong><%= @bottle.liquor.name  %></strong> (Capacity: <%= @bottle.liquor.capacity %> mL)
+    </h3> 
   <div class="container" style="display:flex; justify-content: space-evenly;">
-        <%= render "bottles/bottleHistoryCard" %>
-        <%= render "bottles/fill" %>
+        <%= render "bottles/bottleHistoryCard", readings: @bottle.readings.complete %>
+        <%= render "bottles/fill", reading: @bottle.readings.complete.last %>
   </div>
 
 

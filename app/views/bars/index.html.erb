@@ -4,7 +4,7 @@
 
 <ul class="list-group">
     <% @bars.each do |bar| %>
-      <li class="list-group-item"><%= link_to bar.name, bar %>&nbsp;&nbsp;
+      <li class="list-group-item"><%= link_to bar.name, bar_bottles_path(bar) %>&nbsp;&nbsp;
         <%= link_to bar, method: :delete, data: { confirm: 'Are you sure?' } do %>
           <%= fa_icon 'trash-alt' %>
         <% end %>

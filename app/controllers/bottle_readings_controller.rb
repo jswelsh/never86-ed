@@ -1,3 +1,4 @@
+require 'byebug'
 class BottleReadingsController < ApplicationController
   before_action :require_login
   before_action :set_bar
@@ -30,9 +31,11 @@ class BottleReadingsController < ApplicationController
   def create
     @bottle_reading = @bottle.readings.new(bottle_reading_params)
     @bottle_reading.user = current_user
+    @bottle_reading.reading_time = Time.now.utc
+    # debugger
     respond_to do |format|
       if @bottle_reading.save
-        format.html { redirect_to bar_bottle_readings_path(@bar, @bottle), notice: 'Bottle reading was successfully created.' }
+        format.html { redirect_to bar_bottle_path(@bar, @bottle), notice: 'Bottle reading was successfully created.' }
         format.json { render :show, status: :created, location: @bottle_reading }
       else
         format.html { render :new }

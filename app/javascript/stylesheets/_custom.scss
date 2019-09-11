@@ -1,0 +1,26 @@
+.bottleContainer{
+  position:relative;
+}
+.bottleWrapper {
+ fill: #75d5fd;
+}
+.cloneWrapper{
+ fill:#ff2281;
+ animation: magic 3s infinite;
+ position:absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+@keyframes magic {
+ 0% {
+  clip-path: polygon(20% 67%, 70% 70%, 70% 100%, 20% 100%);
+ }
+ 50% {
+  clip-path: polygon(20% 70%, 70% 67%, 70% 100%, 20% 100%);
+ }
+ 100% {
+  clip-path: polygon(20% 67%, 70% 70%, 70% 100%, 20% 100%);
+ }
+}

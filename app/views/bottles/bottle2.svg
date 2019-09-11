@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg3745"
+   viewBox="-25 50 350 375"
+      version="1"
+      width="284"
+      height="450"
+      sodipodi:docname="86d.jpg">
+  <metadata
+     id="metadata3751">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+    
+     <rect
+        id="rect20"
+        width="100"
+        height="234.92253"
+        x="98.5"
+        y="163.5876" />
+     <rect
+        id="rect22"
+        width="100"
+        height="41.299168"
+        x="98.5"
+        y="382.95587"
+        ry="10"
+        rx="20" />
+     <path
+        sodipodi:type="arc"
+        id="path24"
+        sodipodi:cx="139.98808"
+        sodipodi:cy="163.85577"
+        sodipodi:rx="48.271751"
+        sodipodi:ry="32.449345"
+        d="m 188.25983,163.85577 a 48.271751,32.449345 0 1 1 -96.543499,0 48.271751,32.449345 0 1 1 96.543499,0 z"
+        transform="matrix(1.0358025,0,0,1,3.4999938,-1.0727056)" />
+     <rect
+        id="rect26"
+        width="38.081047"
+        height="127.65197"
+        x="129.45947"
+        y="18.235994"
+        rx="10"
+        ry="5" />
+     <rect
+        id="rect28"
+        width="41.597069"
+        height="23.283083"
+        x="127.70146"
+        y="26.61371"
+        rx="5"
+        ry="5.0000005" />
+</svg>

@@ -5,7 +5,7 @@
 #  id           :bigint           not null, primary key
 #  fill         :decimal(5, 2)
 #  reading_time :time
-#  status       :integer          default(0), not null
+#  status       :integer          default("pending"), not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  bottle_id    :bigint           not null

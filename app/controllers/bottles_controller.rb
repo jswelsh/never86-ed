@@ -31,8 +31,8 @@ class BottlesController < ApplicationController
 
     respond_to do |format|
       if @bottle.save
-        format.html { redirect_to @bottle, notice: 'Bottle was successfully created.' }
-        format.json { render :show, status: :created, location: @bottle }
+        format.html { redirect_to bar_bottles_path(@bar), notice: 'Bottle was successfully created.' }
+        format.json { render :show, status: :created, location: bar_bottles_path(@bar) }
       else
         format.html { render :new }
         format.json { render json: @bottle.errors, status: :unprocessable_entity }

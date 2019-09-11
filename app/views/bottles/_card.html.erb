@@ -1,0 +1,36 @@
+<div class="card bg-navy border border-white float-left m-1" style="width: 18rem;">
+  <h3 class="card-header mx-auto">
+    <%= bottle.liquor.name %>
+  </h3>
+  <div class="card-img-top" alt="Card image cap">
+    <%= render 'bottles/outline' %>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      <table class="table table-hover">
+      <tbody>
+        <tr>
+          <th scope="row">Spirit</th>
+          <td><%= bottle.liquor.spirit %></td>
+        </tr>
+        <tr>
+          <th scope="row">Brand</th>
+          <td><%= bottle.liquor.brand %></td>
+        </tr>
+        <tr>
+          <th scope="row">Capacity</th>
+          <td><%= bottle.liquor.capacity %> mL</td>
+        </tr>
+        <tr>
+          <th scope="row">Cost</th>
+          <td><%= bottle.liquor.cost %></td>
+        </tr>
+      </tbody>
+    </table>
+    </p>
+    <div class="d-flex justify-content-center">
+      <%= link_to 'Show', bar_bottle_path(@bar, bottle), class: %w[btn btn-primary mx-2] %>
+      <%= link_to 'Destroy', bar_bottle_path(@bar, bottle), class: %w[btn btn-danger mx-2], method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+</div>

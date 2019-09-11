@@ -52,31 +52,31 @@ class App extends React.Component {
     return (
       
     <div >
-      <div class="camera-container"> 
+      <div className="camera-container"> 
        
         <div>
           <video ref={this.videoRef}autoPlay="true"/>
         </div>
-         <div class="camera-button-container">
-          <button class="--button" onClick={ () => {
+         <div className="camera-button-container">
+          <button className="--button" onClick={ () => {
             //can switch to front via MODES.USER... n/v useful?
             let mode = FACING_MODES.ENVIRONMENT;
             //these need to be altered in light of TF requirements
             let resolution = { width: 400, height: 400 };
             this.startCamera(mode, resolution);
           }}> Camera</button>
-          <button class="--button" onClick={ () => {
+          <button className="--button" onClick={ () => {
             this.takePhoto();
           }}> Take photo </button>
-          <button class="--button" onClick={ () => {
+          <button className="--button" onClick={ () => {
             this.stopCamera();
           }}> Stop </button>
         </div>
         <div>
-          <video ref={this.videoRef}autoPlay="true"/>
+          <video ref={this.videoRef} autoPlay="true"/>
         </div>
         <div>          
-          <button class="--button" onClick={ () => {
+          <button className="--button" onClick={ () => {
           }}> Submit </button>
         </div>
         <div>
