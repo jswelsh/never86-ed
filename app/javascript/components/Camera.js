@@ -1,7 +1,5 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
 import Image from 'react-bootstrap/Image'
 
 import CameraPhoto, { FACING_MODES } from 'jslib-html5-camera-photo';
@@ -52,37 +50,45 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>
-      <Container fluid="true" > 
-      <Row className="justify-content-md-center">
-        <Button variant="outline-success" size="lg" type='button' onClick={ () => {
-          //can switch to front via MODES.USER... n/v useful?
-          let mode = FACING_MODES.ENVIRONMENT;
-          //these need to be altered in light of TF requirements
-          let resolution = { width: 400, height: 400 };
-          this.startCamera(mode, resolution);
-        }}>Prepare Camera</Button>
-        <Button variant="outline-success" size="lg" type='button' onClick={ () => {
-          this.takePhoto();
-        }}> Take photo </Button>
-        <Button variant="outline-success" size="lg" type='button'  onClick={ () => {
-          this.stopCamera();
-        }}> Stop </Button>
-        </Row>
-        <Row className="justify-content-md-center">
-        <video
-          ref={this.videoRef}
-          autoPlay="true"
-        />
-        </Row>
-        <Row className="justify-content-md-center">
-          <Image alt="Image" src={this.state.dataUri} rounded />
-        </Row>
-        </Container>
+      
+    <div >
+      <div class="camera-container"> 
+       
+        <div>
+          <video ref={this.videoRef}autoPlay="true"/>
+        </div>
+         <div class="camera-button-container">
+          <button class="--button" onClick={ () => {
+            //can switch to front via MODES.USER... n/v useful?
+            let mode = FACING_MODES.ENVIRONMENT;
+            //these need to be altered in light of TF requirements
+            let resolution = { width: 400, height: 400 };
+            this.startCamera(mode, resolution);
+          }}> Camera</button>
+          <button class="--button" onClick={ () => {
+            this.takePhoto();
+          }}> Take photo </button>
+          <button class="--button" onClick={ () => {
+            this.stopCamera();
+          }}> Stop </button>
+        </div>
+        <div>
+          <video ref={this.videoRef}autoPlay="true"/>
+        </div>
+        <div>          
+          <button class="--button" onClick={ () => {
+          }}> Submit </button>
+        </div>
+        <div>
+          {this.state.dataUri ? <Image alt="Image" src={this.state.dataUri} rounded/>: <div></div> }
+        </div>
+
       </div>
+    </div>
     );
   }
 
 }
 
 export default App;
+

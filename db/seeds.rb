@@ -36,3 +36,29 @@ bar = Bar.find_or_create_by!(organization: org, name: 'Tipsy Toddlers')
 liquor = Liquor.find_or_create_by! spirit: 'asdasdasd', brand: 'asdasd', name: 'asdasd', capacity: 100, cost: 25
 bottle = bar.bottles.create liquor: Liquor.first
 =begin bottle_reading = Bottle_readings.find_or_create_by! bottle_id: Bottle.first, reading_time:  =end
+
+liquorOne = [
+    ["Bourbon", "Bulleit", "Bulleit Bourbon", 750, 40.32],
+    ["Gin", "Hendricks", "Hendricks", 750, 49.32],
+    ["Vodka", "Ketel One", "Ketel One", 750, 29.99],
+    ["Spiced Rum", "Kraken", "Kraken", 750, 31.99],
+    ["Vodka", "Russian Standard", "Russian Standard", 750, 24.49],
+    ["Tequila", "Herradura", "Herradura", 750, 75.99]
+]
+
+liquorOne.each do |spirit, brand, name, capacity, cost|
+    Liquor.create(spirit: spirit, brand: brand,name: name, capacity: capacity, cost: cost)
+end
+
+userOne = [
+    ["email@email.com", "Aaron", "Boogan", "password" ,"??????????"],
+    ["email1@email.com", "Phil", "Gueraa", "password" ,"??????????"],
+    ["email12@email.com", "Doug", "Paterson", "password" ,"??????????"],
+    ["email123@email.com", "Sue", "Sally", "password" ,"??????????"],
+    ["email1234@email.com", "Betty", "Boo", "password" ,"??????????"]
+]
+
+userOne.each do |email, first_name, last_name, password_digest, organization_id|
+    User.create( email: email, first_name: first_name, last_name: last_name, password_digest: password_digest, organization_id: organization_id)
+end
+

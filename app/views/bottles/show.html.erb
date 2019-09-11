@@ -1,5 +1,56 @@
+
 <style type="text/css">
+  .--button.camera{
+    position: absolute;
+    font-size: 4em; 
+    text-decoration: none;  
+    margin-top: -164px;
+    left: 550px;
+    z-index: 0;
+    padding-left: 160px;
+    padding-right: 30px;
+  }
+#trapezoid::before {
+  content: '';
+  position: absolute;
+  margin-top: -163px;
+  left: -225px;
+  width: 900px;
+  height: 100px;
+  clip-path: polygon(0% 0, 95% 0, 85% 100%, 15% 100%);
+  background: #652ec7;
+  z-index: 1;
+  justify-content:center;
+}
+#trapezoid::after{
+  content: '';
+  position: absolute;
+  margin-top: -163px;
+  width: 900px;
+  height: 100px;
+  clip-path: polygon(0% 0, 95% 0, 85% 100%, 0% 100%);
+  background: #652ec7;
+  z-index: 0;
+  justify-content:center;
+  animation-name: lipstick2;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+  z-index: 1;
+}
+@keyframes lipstick2 {
+  from {
+  left: 550px;
+  }
+  to {
+  left: -300px;
+  }
+}
 </style>
+ <div style="display:flex; justify-content: space-evenly;">
+  <div id="trapezoid"></div>
+</div>  
+  <%= link_to link_to 'Take Picture', new_bar_bottle_reading_path(@bottle.liquor_id), class: ['--button', 'camera']  %>  
     <p id="notice"><%= notice %></p>
 <%#     <p>
       <strong>Bar:</strong>
@@ -13,16 +64,8 @@
   <div class="container" style="display:flex; justify-content: space-evenly;">
         <%= render "bottles/bottleHistoryCard" %>
         <%= render "bottles/fill" %>
-
   </div>
 
 
-    <%# <%= link_to 'Edit', edit_bar_bottle_path(@bottle), {:style => 'color: #ff0062'}  %>
-    <%# <%= link_to 'Back', bar_bottles_path, {:style => 'color: #ff0062'}%>
+    <%# need to pass current bartenders ID to camera do attach id %>
 
-
-<%#     <div class="col">
-      <div class="container-fluid">
-          <%= render "bottles/fill"
-      </div>
-    </div> %>
