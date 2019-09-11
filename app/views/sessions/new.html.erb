@@ -106,16 +106,13 @@
     </section>
   </div>
   <section class="two" style="padding-top: 40px;">
-    <%= simple_form_for(@session, url: login_path) do |f| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-      <div class="form-inputs">
+
+        <div class="form-inputs">
         <%= f.input :email, class: ['form']%>
         <%= f.input :password %>
       </div>
       <div class="form-actions">
         <%= f.button :submit, class: ['btn', '--button'] %>
       </div>
-    <% end %>
   </section>
 </div>

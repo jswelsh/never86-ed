@@ -1,6 +1,51 @@
+
+
+
+
+
+
 <style type="text/css">
+  .--button.camera{
+    font-size: 4em; 
+    text-decoration: none;   
+    display:flex; 
+    justify-content:center;
+  }
+#trapezoid {
+  position: absolute;
+  margin-top: -120px;
+  width: 0vw;
+  height: 10vw;
+  clip-path: polygon(0 0, 100% 0, 75% 66%, 25% 66%);
+  background: red;
+  z-index: -1;
+  justify-content:center;
+}
+  .button-svg {
+  position: absolute;
+
+
+  /* set height to pixels if you want angle to change with screen width */
+}
 </style>
+ <div style="display:flex; justify-content: space-evenly;">
+<div id="trapezoid"></div>
+  </div>  
+
+
+
+
+
+
+
+
+  <div style="display:flex; justify-content: space-evenly;">
+    <%= link_to 'New Bottle Fill',"/bottlereadings/new", class: ['--button', 'camera']  %>
+  </div>  
+
     <p id="notice"><%= notice %></p>
+
+
 <%#     <p>
       <strong>Bar:</strong>
       <%= @bottle.bar_id 
@@ -10,6 +55,7 @@
       <strong>Liquor:</strong>
       <%= @bottle.liquor_id 
     </p> %>
+
   <div class="container" style="display:flex; justify-content: space-evenly;">
         <%= render "bottles/bottleHistoryCard" %>
         <%= render "bottles/fill" %>
@@ -17,12 +63,5 @@
   </div>
 
 
-    <%# <%= link_to 'Edit', edit_bar_bottle_path(@bottle), {:style => 'color: #ff0062'}  %>
-    <%# <%= link_to 'Back', bar_bottles_path, {:style => 'color: #ff0062'}%>
+    <%# need to pass current bartenders ID to camera do attach id %>
 
-
-<%#     <div class="col">
-      <div class="container-fluid">
-          <%= render "bottles/fill"
-      </div>
-    </div> %>
