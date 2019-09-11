@@ -94,7 +94,25 @@
     text-align: center;
     width: 90%; /* Set the width of the positioned div */
   }
+
+
 </style>
+
+
 <div class="container--camera">
   <%= react_component ('Camera') %>
 </div> 
+
+<%# <div style=" position: absolute; margin-top: -163px; w3-codespan">
+  <%= link_to link_to 'Capture', login_path, class: ['--button', 'camera', 'capture']  
+  <%= link_to link_to 'Submit', login_path, class: ['--button', 'camera', 'submit']   
+    .--button.camera{
+
+    justify-content: center;
+    font-size: 4em; 
+    text-decoration: none;  
+    z-index: 1;
+    margin-left: 10px;
+    margin-left: 10  px;
+  }
+</div> %>

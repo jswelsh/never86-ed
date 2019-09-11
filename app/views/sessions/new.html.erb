@@ -108,8 +108,8 @@
   <section class="two" style="padding-top: 40px;">
 
         <div class="form-inputs">
-        <%= f.input :email, class: ['form']%>
-        <%= f.input :password %>
+        <%= f.input :email, prompt: "Email", class: ['form-control']%>
+        <%= f.input :password, prompt: "Password", class:['form-control'] %>
       </div>
       <div class="form-actions">
         <%= f.button :submit, class: ['btn', '--button'] %>

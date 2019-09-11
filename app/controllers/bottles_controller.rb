@@ -12,7 +12,7 @@ class BottlesController < ApplicationController
   # GET /bottles/1
   # GET /bottles/1.json
   def show
-    @bottle = Bottle.find params[:id]
+   # @bottle = Bottle.find params[:id]
   end
 
   # GET /bottles/new
