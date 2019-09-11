@@ -1,0 +1,9 @@
+@import './bootstrap';
+
+.logo-font {
+    font: 'Avenir Next',sans-serif !important;
+}
+
+.font-1_5-rem {
+  @include font-size(1.5rem, true);
+}
