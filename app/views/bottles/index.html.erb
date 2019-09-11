@@ -16,6 +16,8 @@
       <tr>
         <td><%= bottle.bar_id %></td>
         <td><%= bottle.liquor_id %></td>
+        <td><%= bottle.id %></td>
+        <%= render "bottles/bottleMain", bottle: bottle[:id] %>
         <td><%= link_to 'Show', bottle %></td>
         <td><%= link_to 'Edit', edit_bottle_path(bottle) %></td>
         <td><%= link_to 'Destroy', bottle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
