@@ -1,11 +1,11 @@
-require 'pp'
+#require 'pp'
 #why ___dir___ isntead of path
-LIQUOR_FILE = File.join(__dir__, 'nc_quarterly_pricing_.csv')
+#LIQUOR_FILE = File.join(__dir__, 'nc_quarterly_pricing_.csv')
 
 
 
-org = Organization.find_or_create_by!(name: 'The Original')
-bar = Bar.find_or_create_by!(organization: org, name: 'Tipsy Toddlers')
+#org = Organization.find_or_create_by!(name: 'The Original')
+#bar = Bar.find_or_create_by!(organization: org, name: 'Tipsy Toddlers')
 # user = User.find_or_create_by!(organization: org, email: 'aidan.mattrick@gmail.com')
 # user.update!(first_name: 'Aidan', last_name: 'Mattrick', password: 'password', password_confirmation: 'password')
 
@@ -33,8 +33,8 @@ bar = Bar.find_or_create_by!(organization: org, name: 'Tipsy Toddlers')
 # end
 # pp liquors
 
-liquor = Liquor.find_or_create_by! spirit: 'asdasdasd', brand: 'asdasd', name: 'asdasd', capacity: 100, cost: 25
-bottle = bar.bottles.create liquor: Liquor.first
+#liquor = Liquor.find_or_create_by! spirit: 'asdasdasd', brand: 'asdasd', name: 'asdasd', capacity: 100, cost: 25
+#bottle = bar.bottles.create liquor: Liquor.first
 =begin bottle_reading = Bottle_readings.find_or_create_by! bottle_id: Bottle.first, reading_time:  =end
 
 liquorOne = [
