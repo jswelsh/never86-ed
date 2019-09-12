@@ -4,8 +4,8 @@ SPIRIT_NAMES = %w[vodka rum brandy gin whiskey bourbon tequila mezcal]
 org = Organization.find_or_create_by!(name: 'The Original')
 bar = Bar.find_or_create_by!(organization: org, name: 'Tipsy Toddlers')
 user = User.find_or_create_by!(organization: org, email: 'aidan.mattrick@gmail.com')
-user.update!(first_name: 'Aidan', last_name: 'Mattrick', password: 'password', password_confirmation: 'password')
-
+#user.update!(first_name: 'Aidan', last_name: 'Mattrick', password: 'password', password_confirmation: 'password')
+#if drop database, make user before seeding
 liquors = []
 File.open(LIQUOR_FILE, 'rt') do |f|
   header = %i[nc_code brand name age proof capacity cost cost2] 

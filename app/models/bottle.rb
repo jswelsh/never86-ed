@@ -28,4 +28,7 @@ class Bottle < ApplicationRecord
 
   validates :bar, presence: true, uniqueness: { scope: :liquor }
   validates :liquor, presence: true, uniqueness: { scope: :bar }
+  #commented out so I could seed/add new bottles
+  #validates :photo, presence: true 
+
 end
