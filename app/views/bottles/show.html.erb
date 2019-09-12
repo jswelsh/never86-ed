@@ -58,10 +58,11 @@ console.log(<%= @bottle.readings.complete %>)
     <h3>
       <strong><%= @bottle.liquor.name  %></strong> (Capacity: <%= @bottle.liquor.capacity %> mL)
     </h3> 
-  <div class="container <%= fillColor @bottle.readings.complete.last%>" style="display:flex; justify-content: space-evenly;">
-        <% @bottle.readings.complete.each do |reading| %>
-        <%= render "bottles/history", readings: reading.complete %>
-                <% end %>
+    <div class="container" style="display:flex; justify-content: space-evenly;">
+<%#   <div class="container <%= fillColor @bottle.readings.complete.last" style="display:flex; justify-content: space-evenly;">%>        <% @bottle.readings.complete.each do |reading| %>
+       <%#% <%= render "bottles/history", readings: reading.complete %>
+       <%= render "bottles/bottleHistoryCard", readings: @bottle.readings.complete %>
+               <%#  <% end %>
         <%= render "bottles/fill", reading: @bottle.readings.complete.last %>
   </div>
 
