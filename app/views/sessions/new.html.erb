@@ -106,7 +106,7 @@
     </section>
   </div>
   <section class="two" style="padding-top: 40px;">
-
+<%= simple_form_for(@session, url: login_path) do |f| %>
         <div class="form-inputs">
         <%= f.input :email, prompt: "Email", class: ['form-control']%>
         <%= f.input :password, prompt: "Password", class:['form-control'] %>
@@ -114,5 +114,6 @@
       <div class="form-actions">
         <%= f.button :submit, class: ['btn', '--button'] %>
       </div>
+    <% end %>
   </section>
 </div>
