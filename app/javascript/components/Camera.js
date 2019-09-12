@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
 
 import CameraPhoto, { FACING_MODES } from 'jslib-html5-camera-photo';
@@ -54,8 +53,8 @@ class App extends React.Component {
     <div >
       <div className="camera-container"> 
        
-        <div>
-          <video ref={this.videoRef}autoPlay="true"/>
+      <div>
+          <video ref={this.videoRef} autoPlay="true"/>
         </div>
          <div className="camera-button-container">
           <button className="--button" onClick={ () => {

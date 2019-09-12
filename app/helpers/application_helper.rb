@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-  def fillColor
-    case 60
+  def fillColor fill
+    case fill
     when 80..100
       "full progress-bar progress-bar-striped"
     when 60..79

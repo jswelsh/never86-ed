@@ -84,7 +84,7 @@
           <strong class="date"><%= reading.user.name %></strong>
         </div>
         <div class="progress">
-          <div class="<%= fillColor %> role="progressbar" style="width: <%= reading.fill %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="<%= fillColor reading.fill %>" role="progressbar" style="width: <%= reading.fill %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <% end %>
     </section>
