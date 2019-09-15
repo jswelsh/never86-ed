@@ -31,10 +31,10 @@ class BottleReading < ApplicationRecord
   delegate :organization, to: :bar
   belongs_to :user
 
-  #has_one_attached :photo
+  has_one_attached :photo
   enum status: %w[pending complete failed]
   validates :user, presence: true
-  #validates :photo, presence: true, on: :create
+  validates :photo, presence: true, on: :create
   validates :bottle, presence: true, uniqueness: { scope: :reading_time } 
   validates :reading_time, presence: true, uniqueness: { scope: :bottle }, if: :complete?
   validates :fill, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 100 }, if: :complete?
