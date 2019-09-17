@@ -56,7 +56,8 @@
       <strong><%= @bottle.liquor.name  %></strong> (Capacity: <%= @bottle.liquor.capacity %> mL)
     </h3> 
     <div class="container" style="display:flex; justify-content: space-evenly;">
-<%#   <div class="container <%= fillColor @bottle.readings.complete.last" style="display:flex; justify-content: space-evenly;">%>
+    <%# need to fix bug with DB, instantiate these as partials %>
+    <%#   <div class="container <%= fillColor @bottle.readings.complete.last" style="display:flex; justify-content: space-evenly;">%>
        <%#% <%= render "bottles/history", readings: reading.complete %>
        <%= render "bottles/history", readings: @bottle.readings.complete %> 
                <%#  <% end %>
