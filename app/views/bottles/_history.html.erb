@@ -1,0 +1,121 @@
+<style type="text/css">
+
+  .side-lines::before,
+  .side-lines::after { 
+    position:absolute; 
+    width:20%; 
+    height:8px; 
+    content:''; 
+    border-top:2px 
+    solid #ff2281; 
+    border-bottom: 2px 
+    solid #ff2281; 
+    margin-top: 15px; 
+    }
+  .side-lines::before { margin-left:-21%; }
+  .side-lines::after { margin-left:1%; }
+
+  .fullUp{
+    background-color: #ff2281;
+    animation: expandWidth 3s;
+  }
+  .sixtyUp{
+    background-color: #ff2281;
+    animation: expandWidth 3s;
+  }
+  .fortyUp{
+    background-color: #ff2281;
+    animation: expandWidth 3s;
+  }
+  .twentyUp{
+    background-color: #ff2281;
+    animation: expandWidth 3s;
+  }
+  .emptyUp{
+    background-color: #ff2281;
+    animation: expandWidth 3s;
+  }
+  .progress{
+    height: 20px; 
+    margin:15px 25px 15px 25px;
+    background-color:#75d5fd;
+  }
+  .date{
+    color: #09FBD3;
+    font-size: 1.2em;
+  }
+  .fill{
+    font-size: 2em;
+  }
+  .text-float{
+    position: relative;
+    display: inline-block; /* Make the width of box same as image */
+  }
+  .text-float .float{
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 15%; /* Adjust this value to move the positioned div up and down */
+    text-align: center;
+    width: 90%; /* Set the width of the positioned div */
+  }
+  @keyframes expandWidth {
+    from { width: 0; }
+    to { width: fillPercentage }
+   }
+
+  </style>
+
+<div class="card" style="width: 40rem;">
+  <div class="text-float">
+    <div class="float"> 
+      <strong class="header fill side-lines">Bottle Fill History</strong>
+      <p class="header fill side-lines">V</p>
+    </div>
+    <section class="one">
+    </section>
+  </div>
+    <section class="two" style="padding-top: 50px;">
+      <div>
+        <div class="split">
+        <%# need to change back to instantiating the last 5 instances as partials from DB %>
+        <%# currently hard coded as there is a bug with with updating DB %>
+          <strong class="date"> Jake </strong>
+          <strong class="date"> Sept 4 </strong>
+        </div>
+        <div class="progress">
+          <div class="<%= fillColor 80%>" role="progressbar" style="width: <%= 80 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      <div>
+      <div>
+        <div class="split">
+          <strong class="date"> Steph </strong>
+          <strong class="date"> Sept 5 </strong>
+        </div>
+        <div class="progress">
+          <div class="<%= fillColor 45%>" role="progressbar" style="width: <%= 45 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      <div>      
+      <div>
+        <div class="split">
+          <strong class="date"> Max </strong>
+          <strong class="date"> Sept 6 </strong>
+        </div>
+        <div class="progress">
+          <div class="<%= fillColor 65%>" role="progressbar" style="width: <%=65 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      <div>      
+      <div>
+        <div class="split">
+          <strong class="date"> Kelly </strong>
+          <strong class="date"> Sept 7 </strong>
+        </div>
+        <div class="progress">
+          <div class="<%= fillColor 20%>" role="progressbar" style="width: <%= 20 %>%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      <div>
+        <%# end %>
+    </section>
+</div>
